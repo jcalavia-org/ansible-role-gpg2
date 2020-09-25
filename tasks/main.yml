@@ -10,8 +10,8 @@
     mode: 0700
 
 - name: Copy over gpg.conf file
-  become: true
-  become_user: "{{ gpg2_user }}"
+#  become: true
+#  become_user: "{{ gpg2_user }}"
   template:
     src : 'gpg.conf.j2'
     dest: '{{ gpg2_basedir }}/gpg.conf'
