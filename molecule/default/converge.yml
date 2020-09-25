@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include molecule-ec2-template"
+    - name: 'Include ansible-role-gpg2'
       include_role:
-        name: "molecule-ec2-template"
+        name: 'ansible-role-gpg2'

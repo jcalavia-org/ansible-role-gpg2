@@ -4,8 +4,6 @@
   hosts: all
   gather_facts: false
 
-
-
   tasks:
   - name: 'Waits for SSH Port'
     wait_for:

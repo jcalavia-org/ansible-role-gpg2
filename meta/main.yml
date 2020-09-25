@@ -1,6 +1,6 @@
 galaxy_info:
   author: Jorge Calavia
-  description: Template role for AWS EC2 molecule testing
+  description: Managing GNU Privacy Guard
   company: JCalavia Org
 
   license: GPL-3.0-or-later
@@ -15,6 +15,7 @@ galaxy_info:
 
   # NOTE: A tag is limited to a single word comprised of alphanumeric characters.
   #       Maximum 20 tags per role.
-  galaxy_tags: []
+  galaxy_tags:
+    - gpg
 
 dependencies: []

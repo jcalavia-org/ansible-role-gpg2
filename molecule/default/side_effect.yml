@@ -3,7 +3,11 @@
   hosts: all
   gather_facts: false
 
+  vars:
+    - gpg_key_basedir: '.gnupg'
+
   tasks:
-  - name:  Side effect 
-    debug:
-      msg: Simulate conditions which can break role 
+  - name:  Side effect - Remove basedir
+    file:
+      dest: "~/{{ gpg_key_basedir }}"
+      state: absent

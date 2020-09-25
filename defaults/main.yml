@@ -1,2 +1,13 @@
 ---
-# defaults file for molecule-ec2-template
+# defaults file for ansible-role-gpg2
+
+gpg2_packages:
+  - gnupg2
+  - python3-pip
+
+gpg2_module_packages:
+  - packaging
+
+gpg2_user: "{{ ansible_user }}"
+gpg2_basedir : '~/.gnupg'
+
