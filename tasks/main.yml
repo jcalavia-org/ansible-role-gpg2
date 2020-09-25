@@ -4,6 +4,8 @@
 - include: install.yml
 
 - name: Ensure "{{ gpg2_basedir }}" config directory exists with right permissions
+#  become: true
+#  become_user: "{{ gpg2_user }}"
   file:
     dest: "{{ gpg2_basedir }}"
     state: directory
@@ -15,8 +17,8 @@
   template:
     src : 'gpg.conf.j2'
     dest: '{{ gpg2_basedir }}/gpg.conf'
-    owner: "{{ gpg2_user }}"
-    group: "{{ gpg2_user }}"
+#    owner: "{{ gpg2_user }}"
+#    group: "{{ gpg2_user }}"
     mode: 0600
 
 - name: get keyinfo for all keys
