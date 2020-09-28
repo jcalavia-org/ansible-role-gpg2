@@ -1,5 +1,13 @@
 ---
+- name: get keyinfo for all keys
+  gpg_key:
+    homedir: "{{ gpg2_basedir }}"
+    fpr: '*'
+    state: info
+  register: key_list_to_delete
+
 - name: Delete all key's
   gpg_key: 
-    fpr: '*'
+    fpr: "{{ item.fingerprint }}"
     state: absent
+  whith_items: "{{ key_list_to_delete.keys }}"
