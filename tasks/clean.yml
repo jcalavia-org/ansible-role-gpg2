@@ -4,7 +4,7 @@
     homedir: "{{ gpg2_basedir }}"
     fpr: '*'
     state: info
-  register: key_dict_to_delete.keys
+  register: key_dict_to_delete
 
 - name: Delete all keys
   gpg_key: 
