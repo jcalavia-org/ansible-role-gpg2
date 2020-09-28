@@ -11,4 +11,4 @@
     fpr: "{{ item.value['fingerprint'] }}"
     state: absent
   with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
-  when: item.value['type'] == "sec" or item.value['type'] == "pub"
+  when: item.value['type'] == "sec"
