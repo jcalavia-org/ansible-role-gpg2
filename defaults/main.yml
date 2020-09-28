@@ -11,3 +11,6 @@ gpg2_module_packages:
 gpg2_user: "{{ ansible_user }}"
 gpg2_basedir : '~/.gnupg'
 
+gpg2_install_key_files: []
+gpg2_trust_level: '5'
+

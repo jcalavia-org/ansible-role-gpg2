@@ -2,4 +2,4 @@
 - name: Install key files
   gpg_key: 
     content: "{{ item }}"
-  with_file: "{{ install_key_files }}"
+  with_file: "{{ gpg2_install_key_files }}"
