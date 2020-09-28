@@ -10,4 +10,5 @@
   gpg_key: 
     fpr: "{{ item.fingerprint }}"
     state: absent
-  whith_items: "{{ key_list_to_delete.keys }}"
+  whith_items: 
+   - "{{ key_list_to_delete.keys }}"
