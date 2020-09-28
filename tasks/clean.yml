@@ -8,6 +8,7 @@
 
 - name: Delete all keys
   gpg_key: 
-    fpr: "{{ item.fingerprint }}"
+    fpr: "{{ item.key }}"
     state: absent
-    whith_items: "{{ key_list_to_delete.keys }}"
+  with_items: "{{ key_list_to_delete.keys | dict2items }}"
+s
