@@ -8,7 +8,7 @@ gpg2_packages:
 gpg2_module_packages:
   - packaging
 
-gpg2_user: "{{ ansible_user }}"
+gpg2_user: "{{ ansible_ssh_user }}"
 gpg2_basedir : '~/.gnupg'
 
 gpg2_install_key_files: []
