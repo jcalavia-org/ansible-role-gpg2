@@ -8,7 +8,7 @@
 
 - name: Delete keys
   gpg_key: 
-    fpr: "{{ item.value['fingerprint'] }}"
+    fpr: "{{ item.key }}"
     state: absent
   with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
 
