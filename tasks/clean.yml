@@ -1,28 +1,8 @@
 ---
-- name: get keyinfo for all keys
-  gpg_key:
-    homedir: "{{ gpg2_basedir }}"
-    fpr: '*'
-    state: info
-  register: key_dict_to_delete
-
-- name: Delete sub keys
-  gpg_key: 
-    fpr: "{{ item.value['fingerprint'] }}"
+- name: Clean "{{ gpg2_basedir }}" 
+  become: true 
+  become_user: "{{ gpg2_user }}"
+  file:
+    dest: "{{ gpg2_basedir }}"
     state: absent
-  with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
-  when: item.value['type'] == "ssb"
-
-- name: Delete public keys
-  gpg_key: 
-    fpr: "{{ item.value['fingerprint'] }}"
-    state: absent
-  with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
-  when: item.value['type'] == "pub"
-
-- name: Delete secret keys
-  gpg_key: 
-    fpr: "{{ item.value['fingerprint'] }}"
-    state: absent
-  with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
-  when: item.value['type'] == "sec"
+    
