@@ -10,4 +10,4 @@
   gpg_key: 
     fpr: "{{ item.key }}"
     state: absent
-  with_items: "{{ key_dict_to_delete | dict2items }}"
+  with_items: "{{ key_dict_to_delete[keys] | dict2items }}"
