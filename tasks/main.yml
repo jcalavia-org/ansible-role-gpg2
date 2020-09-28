@@ -6,6 +6,7 @@
 - include: configure.yml
 
 - include: clean.yml
+  when: gpg2_clean_keys
 
 - include: install.yml
 

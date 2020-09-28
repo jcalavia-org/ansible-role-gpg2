@@ -1,0 +1,5 @@
+---
+- name: Delete all key's
+  gpg_key: 
+    fpr: '*'
+    state: absent
