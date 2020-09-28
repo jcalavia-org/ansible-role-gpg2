@@ -19,4 +19,5 @@
 
 - name: Key List
   debug:
-    msg: "{{ key_list }}"
+    msg: "{{ item.key }}"
+  with_items: "{{ key_list['keys'] | dict2items }}"

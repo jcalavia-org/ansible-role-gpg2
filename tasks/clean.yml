@@ -5,4 +5,3 @@
   file:
     dest: "{{ gpg2_basedir }}"
     state: absent
-    
