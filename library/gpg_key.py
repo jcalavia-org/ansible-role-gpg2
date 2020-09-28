@@ -935,6 +935,7 @@ class GpgKey(object):
         if action == "file" and state == "present":
             args = [
                 "--import",
+                "--batch",
                 self.module.params["file"],
             ]
 
