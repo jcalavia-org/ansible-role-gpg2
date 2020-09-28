@@ -6,7 +6,14 @@
     state: info
   register: key_dict_to_delete
 
-- name: Delete all keys
+- name: Delete private keys
+  gpg_key: 
+    fpr: "{{ item.value['fingerprint'] }}"
+    state: absent
+  with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
+  when: item.value['type'] == "ssb"
+
+- name: Delete public keys
   gpg_key: 
     fpr: "{{ item.value['fingerprint'] }}"
     state: absent
