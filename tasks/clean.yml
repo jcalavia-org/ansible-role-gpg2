@@ -8,6 +8,7 @@
 
 - name: Delete all keys
   gpg_key: 
-    fpr: "{{ item.key }}"
+    fpr: "{{ item.fingerprint }}"
     state: absent
-  with_items: "{{ key_dict_to_delete['keys'] | dict2items }}"
+  with_items: "{{ key_dict_to_delete['keys'] | dict2items | dict2items }}"
+  when: item.type == "sec" or item.type == "pub"
