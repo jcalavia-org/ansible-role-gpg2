@@ -4,7 +4,7 @@
 - include: setup.yml
 
 - include: clean.yml
-  when: gpg2_clean_keys
+  when: gpg2_clean_keys | bool
 
 - include: configure.yml
 
