@@ -1,0 +1,11 @@
+---
+- name: get keyinfo for all keys
+  gpg_key:
+    homedir: "{{ gpg2_basedir }}"
+    fpr: '*'
+    state: info
+  register: key_list
+
+- name: Key List
+  debug:
+    msg: "{{ key_list }}"
