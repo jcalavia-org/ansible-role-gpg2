@@ -11,4 +11,3 @@
     fpr: "{{ item.key }}"
     state: absent
   with_items: "{{ key_list_to_delete.keys | dict2items }}"
-s
