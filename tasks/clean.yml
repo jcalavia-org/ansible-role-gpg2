@@ -6,7 +6,7 @@
     state: info
   register: key_list_to_delete
 
-- name: Delete all key's
+- name: Delete all keys
   gpg_key: 
     fpr: "{{ item.fingerprint }}"
     state: absent
