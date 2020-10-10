@@ -3,4 +3,4 @@
   gpg_key: 
     content: "{{ item }}"
     trust: "{{ gpg2_trust_level }}"
-  with_file: "{{ gpg2_install_key_files }}"
+  with_fileglob: "{{ gpg2_install_key_files }}"
