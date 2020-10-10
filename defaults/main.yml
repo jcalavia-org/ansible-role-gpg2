@@ -3,6 +3,7 @@
 
 gpg2_packages:
   - gnupg2
+  - pinentry-tty
   - python3-pip
 
 gpg2_module_packages:
