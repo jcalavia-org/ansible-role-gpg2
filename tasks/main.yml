@@ -1,5 +1,13 @@
 ---
-# tasks file for molecule-ec2-template
-- name: NOP Task
-  debug:
-    msg: Testing roles
+# tasks file for ansible-role-gpg2
+
+- include: setup.yml
+
+- include: clean.yml
+  when: gpg2_clean_keys | bool
+
+- include: configure.yml
+
+- include: install.yml
+
+- include: info.yml
