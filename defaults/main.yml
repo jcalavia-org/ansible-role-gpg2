@@ -14,5 +14,3 @@ gpg2_basedir : '~/.gnupg'
 
 gpg2_install_key_files: []
 gpg2_trust_level: '5'
-gpg2_clean_keys: true
-

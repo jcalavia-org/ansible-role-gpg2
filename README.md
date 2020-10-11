@@ -2,12 +2,10 @@
 
 # GNU Privacy Guard Ansible Role
 
-Install  and configure gpg2
+Install and configure gpg2
 
 Additional options:
-* Generate Key's
 * Import Key's
-* Trust Key's
 
 # References
 

@@ -10,3 +10,4 @@
 - name: Install python packages needed
   pip:
     name: "{{ gpg2_module_packages }}"
+    state: present
