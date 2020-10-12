@@ -1,0 +1,8 @@
+---
+# alpine vars for ansible-role-gpg2
+
+gpg2_packages:
+  - gnupg
+  - pinentry
+  - py3-packaging
+
