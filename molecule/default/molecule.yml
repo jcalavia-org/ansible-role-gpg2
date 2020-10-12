@@ -13,6 +13,11 @@ platforms:
     instance_type: t1.micro
     vpc_subnet_id: subnet-00e245860955fea19
 
+  - name: Alpine Linux 3.10.1 x86_64 r1
+    image: ami-00fcd74ef57d7f27d
+    instance_type: t1.micro
+    vpc_subnet_id: subnet-00e245860955fea19
+
 provisioner:
   name: ansible
 
