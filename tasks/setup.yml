@@ -1,8 +1,0 @@
-- name: Install Debian packages
-  become: true
-  apt:
-    pkg: "{{ gpg2_packages }}"
-    state: present
-    update_cache: yes
-    cache_valid_time: 86400
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

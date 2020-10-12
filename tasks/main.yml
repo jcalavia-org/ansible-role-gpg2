@@ -1,9 +1,36 @@
 ---
 # tasks file for ansible-role-gpg2
 
-- include: setup.yml
+- name: gather os specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+  tags: vars
 
-- include: configure.yml
+- name: install packages
+  become: true
+  package:
+    name: "{{ gpg2_packages }}"
+    state: present
+
+- name: Ensure "{{ gpg2_basedir }}" config directory exists with right permissions
+  become: true
+  become_user: "{{ gpg2_user }}"
+  file:
+    dest: "{{ gpg2_basedir }}"
+    state: directory
+    mode: 0700
+
+- name: copy gpg.conf file
+  become: true
+  become_user: "{{ gpg2_user }}"
+  template:
+    src : "gpg.conf.j2"
+    dest: "{{ gpg2_basedir }}/gpg.conf"
+    owner: "{{ gpg2_user }}"
+    group: "{{ gpg2_user }}"
+    mode: 0600
 
 - include: install.yml
   when: gpg2_install_key_files | length
