@@ -1,6 +1,10 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    gpg2_install_key_files:
+      - "../test_keys/test_key.sec"
+      - "../test_keys/test_key.pub"
   tasks:
     - name: 'Include ansible-role-gpg2'
       include_role:

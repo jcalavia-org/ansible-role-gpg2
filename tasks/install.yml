@@ -1,6 +1,7 @@
 ---
 - name: Install key files
-  gpg_key: 
+  no_log: true
+  gpg_key:
     content: "{{ item }}"
     trust: "{{ gpg2_trust_level }}"
   with_file: "{{ gpg2_install_key_files }}"

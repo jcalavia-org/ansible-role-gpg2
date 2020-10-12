@@ -4,15 +4,11 @@
 gpg2_packages:
   - gnupg2
   - pinentry-tty
-  - python3-pip
-
-gpg2_module_packages:
-  - packaging
+  - python3-packaging
 
 gpg2_user:
 gpg2_basedir : '~/.gnupg'
 
 gpg2_install_key_files: []
 gpg2_trust_level: '5'
-gpg2_clean_keys: true
-
+gpg2_show_keys_info: false

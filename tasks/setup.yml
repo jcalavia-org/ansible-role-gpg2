@@ -6,7 +6,3 @@
     update_cache: yes
     cache_valid_time: 86400
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-- name: Install python packages needed
-  pip:
-    name: "{{ gpg2_module_packages }}"
