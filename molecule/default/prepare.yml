@@ -3,8 +3,18 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Install python for Ansible
+    - name: Install python for Ansible (Ubuntu)
+      become: true
       raw: > 
         test -e /usr/bin/python || 
-        (apt -y update && apt install -y python-minimal python-zipstream) || 
+        (apt -y update && apt install -y python-minimal python-zipstream)
+      when: ansible_user == 'ubuntu'
+      changed_when: false
+
+    - name: Install python for Ansible (Alpine)
+      become: true
+      raw: > 
+        test -e /usr/bin/python || 
         (apk update && apk add python3)
+      when: ansible_user == 'alpine'
+      changed_when: false
