@@ -6,5 +6,7 @@
 - include: configure.yml
 
 - include: install.yml
+  when: gpg2_install_key_files | length
 
 - include: info.yml
+  when: gpg2_show_keys_info | bool
