@@ -1,0 +1,7 @@
+---
+# ubuntu vars for ansible-role-gpg2
+
+gpg2_packages:
+  - gnupg2
+  - pinentry-tty
+  - python3-packaging
