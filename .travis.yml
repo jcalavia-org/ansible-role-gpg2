@@ -16,3 +16,7 @@ cache:
   directories:
     - '$HOME/.cache/pip'
     - '$HOME/virtualenv'
+
+branches:
+  only:
+  - master
